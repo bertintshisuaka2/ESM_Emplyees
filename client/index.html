@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <link rel="icon" type="image/png" href="%VITE_APP_LOGO%" />
+    <link rel="apple-touch-icon" href="%VITE_APP_LOGO%" />
+    <title>%VITE_APP_TITLE%</title>
+    <style>
+      /* Hide all Manus branding badges and watermarks */
+      [data-manus-badge],
+      [class*="manus"][style*="position: fixed"],
+      div[style*="position: fixed"][style*="z-index: 999"],
+      div[style*="position: fixed"][style*="z-index: 9999"],
+      iframe[src*="manus"],
+      /* Hide corner badges */
+      body > div[style*="position: fixed"][style*="top: 0"][style*="right: 0"],
+      body > div[style*="position: fixed"][style*="top: 0"][style*="left: 0"],
+      body > div[style*="position: fixed"][style*="bottom: 0"],
+      /* Hide preview mode banner */
+      div[role="status"],
+      div[class*="preview"],
+      /* Specific badge hiding */
+      #root > div[style*="position: fixed"] {
+        display: none !important;
+        visibility: hidden !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+    <script
+      defer
+      src="%VITE_ANALYTICS_ENDPOINT%/umami"
+      data-website-id="%VITE_ANALYTICS_WEBSITE_ID%"
+    ></script>
+  </body>
+</html>
